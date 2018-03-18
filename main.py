@@ -57,7 +57,7 @@ templatestyle += "</style>"
 bodyformatted = templatebody.format(sitename='TetaHen',categories='c1 c2 c3 c4 c5',title=title,text=text,body=body,advert='')
 
 print templatestyle.encode("utf-8")
-print templatebody.encode("utf-8")
+print bodyformatted.encode("utf-8")
 
 
 """{sitename}
