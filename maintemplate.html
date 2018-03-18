@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+img {
+    width: 95%;
+    height: auto;
+}
+
+.col-container {
+    display: table;
+    width: 100%;
+}
+.col_imagem {
+    display: table-cell;
+    width:75%;
+    padding: 16px;
+}
+.col_propaganda {
+    display: table-cell;
+    width:25%;
+}
+.col_header {
+    display: table;
+    
+    width:100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .col_imagem {
+      display: block;
+      width:100%;
+      padding: 16px;
+    }
+    .col_propaganda {
+      display: block;
+      width:50%;
+    }
+}
+</style>
+</head>
+<body>
+
+
+  <div class="col_header" style="background:pink">
+    <h1><center>{sitename}</center></h1>
+    <h2>{categories}</h2>
+  </div>
+  
+<div class="col-container">
+
+  <div class="col_imagem" style="background:pink">
+    <h2>{title}</h2>
+    <h3>{text}</h3>
+    {body}
+  </div>
+
+  <div class="col_propaganda" style="background:white">
+    <h1>{advert}</h1>
+    
+  </div>
+
+</div>
+
+</body>
+</html>

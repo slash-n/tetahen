@@ -25,12 +25,8 @@ rnddir = getrandomdir(imagessubdirs)
 
 imagestestlist = os.listdir(pagesroot + '/' + rnddir)
 
-print '<html><head></head><body>'
-
-print '<font size=50> FUCK YOU WORDPRESS </font>\n'
-
-print gettext(joinpath(pagesroot,rnddir,'title.txt'))
-print gettext(joinpath(pagesroot,rnddir,'text.txt'))
+title = gettext(joinpath(pagesroot,rnddir,'title.txt'))
+text = gettext(joinpath(pagesroot,rnddir,'text.txt'))
 categories = gettext(joinpath(pagesroot,rnddir,'categ.txt')).split()
 
 relatedpages = []
@@ -47,12 +43,20 @@ for cat in categories:
 
 imagestestlist = sorted(imagestestlist)
 
+body = """"""
+
 for i in imagestestlist:
-    print '<img src="' + websitepath + pagesroot + '/' + rnddir + '/' +  i + '">\n'
+    body += '<img src="' + websitepath + pagesroot + '/' + rnddir + '/' +  i + '">\n'
 
 
+template = gettext('maintemplate.html')
+
+print template.format(sitename='TetaHen',categories='c1 c2 c3 c4 c5',title=title,text=text,body=body,advert='')
 
 
-
-print('</body></html>')
-
+"""{sitename}
+{categories}
+{title}
+{text}
+{body}
+{advert}"""
